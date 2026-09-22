@@ -1,0 +1,187 @@
+{
+ "note": "用 Qwen3.5-4B 分词器量：原模型在 20 道测试题 × 20 遍 = 400 段对话、4756 次调用上的每次调用固定开销。",
+ "fixed_prompt_tokens": {
+  "original": 5040,
+  "lean": 3208,
+  "all_tools_stubbed": 2642
+ },
+ "tool_schema_tokens": {
+  "original": 3242,
+  "lean": 1410
+ },
+ "policy_tokens": 1690,
+ "system_without_tools": 1798,
+ "expand_cost_when_called": {
+  "book_reservation": 881,
+  "cancel_reservation": 47,
+  "send_certificate": 86,
+  "update_reservation_baggages": 207,
+  "update_reservation_flights": 375,
+  "update_reservation_passengers": 236
+ },
+ "tool_result_tokens_by_tool": {
+  "get_reservation_details": {
+   "n": 994,
+   "mean": 322,
+   "median": 305,
+   "max": 468,
+   "total": 319678
+  },
+  "search_onestop_flight": {
+   "n": 130,
+   "mean": 1838,
+   "median": 1903,
+   "max": 3300,
+   "total": 238947
+  },
+  "get_user_details": {
+   "n": 342,
+   "mean": 356,
+   "median": 365,
+   "max": 497,
+   "total": 121839
+  },
+  "search_direct_flight": {
+   "n": 287,
+   "mean": 216,
+   "median": 252,
+   "max": 511,
+   "total": 61952
+  },
+  "update_reservation_flights": {
+   "n": 128,
+   "mean": 260,
+   "median": 304,
+   "max": 473,
+   "total": 33310
+  },
+  "book_reservation": {
+   "n": 62,
+   "mean": 239,
+   "median": 273,
+   "max": 294,
+   "total": 14828
+  },
+  "update_reservation_passengers": {
+   "n": 19,
+   "mean": 307,
+   "median": 307,
+   "max": 307,
+   "total": 5833
+  },
+  "list_all_airports": {
+   "n": 16,
+   "mean": 287,
+   "median": 287,
+   "max": 287,
+   "total": 4592
+  },
+  "update_reservation_baggages": {
+   "n": 4,
+   "mean": 386,
+   "median": 386,
+   "max": 386,
+   "total": 1544
+  },
+  "cancel_reservation": {
+   "n": 2,
+   "mean": 349,
+   "median": 349,
+   "max": 349,
+   "total": 698
+  },
+  "transfer_to_human_agents": {
+   "n": 310,
+   "mean": 2,
+   "median": 2,
+   "max": 2,
+   "total": 620
+  },
+  "send_certificate": {
+   "n": 23,
+   "mean": 13,
+   "median": 5,
+   "max": 29,
+   "total": 306
+  },
+  "send_message": {
+   "n": 15,
+   "mean": 10,
+   "median": 10,
+   "max": 10,
+   "total": 150
+  },
+  "get_flight_status": {
+   "n": 58,
+   "mean": 1,
+   "median": 1,
+   "max": 2,
+   "total": 78
+  }
+ },
+ "totals_over_400_convs": {
+  "tool_results_total": 804375,
+  "assistant_text": 682406,
+  "assistant_tool_call_args": 127179,
+  "user_text": 110825,
+  "assistant_flood": 89600
+ },
+ "per_tool_schema_tokens": [
+  [
+   "book_reservation",
+   1118
+  ],
+  [
+   "update_reservation_flights",
+   618
+  ],
+  [
+   "update_reservation_passengers",
+   479
+  ],
+  [
+   "update_reservation_baggages",
+   451
+  ],
+  [
+   "search_onestop_flight",
+   381
+  ],
+  [
+   "search_direct_flight",
+   378
+  ],
+  [
+   "send_certificate",
+   329
+  ],
+  [
+   "transfer_to_human_agents",
+   325
+  ],
+  [
+   "get_flight_status",
+   306
+  ],
+  [
+   "calculate",
+   302
+  ],
+  [
+   "get_user_details",
+   295
+  ],
+  [
+   "get_reservation_details",
+   288
+  ],
+  [
+   "cancel_reservation",
+   285
+  ],
+  [
+   "list_all_airports",
+   248
+  ]
+ ]
+}

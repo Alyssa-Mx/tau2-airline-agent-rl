@@ -1,0 +1,94 @@
+{
+ "note": "同一条真实对话截成不同长度，每个长度在 vLLM 0.19.1 上生成 12 次，数整轮坍塌成 '!' 的次数。Qwen3.5-4B。",
+ "vllm_length_sweep": [
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 5031,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 6130,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 8465,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 12677,
+   "floods": 6,
+   "n": 12
+  },
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 14784,
+   "floods": 4,
+   "n": 12
+  },
+  {
+   "sampling": "legacy_sampling (temp 0.5, no repetition penalty)",
+   "prompt_tokens": 17509,
+   "floods": 10,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 5031,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 6130,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 8465,
+   "floods": 0,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 12677,
+   "floods": 7,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 14784,
+   "floods": 7,
+   "n": 12
+  },
+  {
+   "sampling": "native_sampling (presence_penalty 1.5 + repetition detection)",
+   "prompt_tokens": 17509,
+   "floods": 6,
+   "n": 12
+  }
+ ],
+ "hf_transformers_same_weights": {
+  "prompt_tokens": 22353,
+  "floods": 0,
+  "n": 12
+ },
+ "vllm_no_chunked_prefill": {
+  "prompt_tokens": 17509,
+  "flag": "--max-num-batched-tokens 32768",
+  "floods": 0,
+  "n": 12,
+  "baseline_same_context": {
+   "flag": "default max_num_batched_tokens=8192",
+   "floods": 12,
+   "n": 12
+  }
+ },
+ "note_other_model": "Qwen3.5-0.8B 在 5.1k token、未分块时就会刷屏（vLLM 7/24 vs HF 0/24），不分块预填对它无效，是另一条故障路径；在 0.8B 上做过的 SSM fp32 / enforce-eager / max-num-seqs=1 对照不作为 4B 的证据。"
+}

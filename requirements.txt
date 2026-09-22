@@ -1,0 +1,14 @@
+# ---- 重算数字：analysis/reproduce.py 只用 Python 标准库 ----
+
+# ---- 出图：analysis/make_figures.py ----
+matplotlib>=3.7
+
+# ---- 单测 ----
+torch                       # rl/tests/test_masked_adv.py
+# tau2（τ²-bench）          # harness/tests/test_lean_agent.py：pip install git+https://github.com/sierra-research/tau2-bench
+
+# ---- 训练 / 评测（GPU），实验时的版本 ----
+# verl==0.9.0
+# vllm==0.19.1              # 受 GPU 驱动限制；0.20.0 起已合入 PR #35687，可不挂 qwen3_toolend 插件
+# torch==2.10.0
+# transformers==5.10.4
